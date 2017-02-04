@@ -1,0 +1,47 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+haters
+
+# build / production
+build
+dist
+Gemfile.lock
+tmp
+
+# dependencies
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+
+# IntelliJ
+.idea
+/*.iml
+
+# logs
+logs
+*.log
+npm-debug.log
+stats.json
+
+
+# misc
+.DS_Store
+.env
+.htaccess
+
+# sass
+.sass-cache
+
+# sublime text project files
+/*.sublime-project
+/*.sublime-workspace
+
+# testing
+coverage
+test-results.html
+
+# webpack files (for cached DLL's)
+webpack-stats.json
+
+# yarn.lock
+# https://yarnpkg.com/en/docs/usage
+*.lock
+yarn.lock
