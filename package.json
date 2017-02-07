@@ -12,11 +12,11 @@
     "start": "node src/index.js"
   },
   "devConfig": {
-    "apiUrl": "http://localhost:5005/",
+    "apiUrl": "http://localhost:5005",
     "apiPort": 5005,
-    "apiSqlUrl": "http://localhost5005/",
+    "apiSqlUrl": "http://localhost5005",
     "apiSqlPort": 5005,
-    "clientUrl": "http://localhost:3000/",
+    "clientUrl": "http://localhost:3000",
     "clientPort": 3000
   },
   "devDependencies": {
