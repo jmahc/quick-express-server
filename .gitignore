@@ -7,6 +7,8 @@ dist
 Gemfile.lock
 tmp
 
+src/data
+
 # dependencies
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
