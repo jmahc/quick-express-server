@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "jwt-decode": "1.4.0",
+    "lodash": "4.17.4",
     "md5": "2.2.1",
     "morgan": "1.7.0",
     "passport": "0.3.2",

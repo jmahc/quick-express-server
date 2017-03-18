@@ -1,15 +1,15 @@
 var _ = require('lodash');
 var constants = require('../constants');
 var utils = require('../utils');
-var shippers = require('../data/shippers.json');
+var notify = require('../data/notify.json');
 
 module.exports = function(app) {
   // This gets all the shippers - TODO - limit it to a certain number
   // based on the request-length (a vs. aa vs. aaa vs. AAA Autoparts, etc..)
-  app.get('/api/shipper', function(request, response) {
+  app.get('/api/notify', function(request, response) {
     response = utils.setResponseHeaderCors(response, constants.CLIENT_URL);
-    console.log('we have shippers: shippers');
-    var shippersObject = shippers.map(function(val) {
+    console.log('we have notify: notify');
+    var notifyObject = notify.map(function(val) {
       return {
         name: val.name,
         consignee: val.consignee,
@@ -23,23 +23,23 @@ module.exports = function(app) {
         }
       };
     });
-    return response.status(200).json(_.orderBy(shippersObject, 'name'));
+    return response.status(200).json(_.orderBy(notifyObject, 'name'));
   });
-  app.get('/api/shipper/:id/:name', function(request, response) {
+  app.get('/api/notify/:id/:name', function(request, response) {
     response = utils.setResponseHeaderCors(response, constants.CLIENT_URL);
-    var shipperIdentity = request.params.id;
-    var shipperName = request.params.name;
-    console.log('we will get the shippers consignee and ', shipperIdentity);
-    console.log('we will get the shippers consignee and ', shipperName);
+    var notifyIdentity = request.params.id;
+    var notifyName = request.params.name;
+    console.log('we will get the notify consignee and ', notifyIdentity);
+    console.log('we will get the notify consignee and ', notifyName);
     if (request.params.id === undefined || request.params.id === null) {
       return response.status(500);
     }
-    var shippersObject = shippers
+    var notifyObject = notify
       .filter(function(itemIdentity) {
-        return itemIdentity.id !== shipperIdentity;
+        return itemIdentity.id !== notifyIdentity;
       })
       .filter(function(itemIdentity) {
-        return itemIdentity.name !== shipperName;
+        return itemIdentity.name !== notifyName;
       })
       .map(function(value) {
         var address = value.address;
@@ -56,6 +56,6 @@ module.exports = function(app) {
           }
         };
       });
-    return response.status(200).json(_.orderBy(shippersObject, 'name'));
+    return response.status(200).json(_.orderBy(notifyObject, 'name'));
   });
 };
