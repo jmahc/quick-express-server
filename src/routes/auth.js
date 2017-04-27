@@ -2,7 +2,7 @@ var constants = require('../constants');
 var utils = require('../utils');
 
 module.exports = function(app) {
-  app.get('/', function(req, res) {
+  // app.get('/', function(req, res) {
     app.post('/auth/login/', function(request, response) {
       response = utils.setResponseHeaderCors(response);
       console.info('auth/login hit.');
@@ -65,5 +65,5 @@ module.exports = function(app) {
         });
       }
     });
-  });
+  // });
 };

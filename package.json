@@ -16,8 +16,8 @@
     "apiPort": 5005,
     "apiSqlUrl": "http://localhost5005",
     "apiSqlPort": 5005,
-    "clientUrl": "http://localhost:3000",
-    "clientPort": 3000
+    "clientUrl": "http://localhost:8080",
+    "clientPort": 8080
   },
   "devDependencies": {
     "jwt-decode": "1.4.0",
